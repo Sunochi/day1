@@ -1,0 +1,73 @@
+--Shape.php----------------------------------------
+Class Shape{
+ public $itsType = "";
+ public function draw(){
+   //とりあえず空。継承先で要記述
+   return true;
+ };
+}
+
+--Circle.php---------------------------------------
+class Circle extends Shape
+{
+  public $itsRadius;
+  public $itsCenter = array();
+  public function draw(){
+    //TODO 円を書く
+    return true;
+  }
+};
+
+--Square.php---------------------------------------
+class Square extends Shape
+{
+  public $itsSide;
+  public $itsTopLeft;
+  public function draw(){
+    //TODO 四角を書く
+    return true;
+  }
+};
+
+--drawingTool.php-------------------------------
+class drawingTool{
+  public function drawAllShapes($list)
+  {
+    int i;
+    for (i = 0; i < count(list); i++)
+    {
+      $list[i]->draw();
+    }
+  }
+}
+--------------------------------------------------
+
+public function BigCircle($radius, $point){
+  $circle = new Circle;
+  $circle->$itsRadius = $radius;
+  //@TODO $pointの値をチェックすべき
+  $itsCenter = array("x"=> $point[0], "y"=>$point[1]);
+  retrun $circle;
+}
+
+public function BigSquare($side, $point){
+  $square = new Square;
+  $square->$itsSide = $side;
+  //@TODO $pointの値をチェックすべき
+  $itsTopLeft = array("x"=> $point[0], "y"=>$point[1]);
+  retrun $square;
+}
+
+public function Point($x, $y){
+  //これ必要？配列にして返すだけ
+}
+
+public void testDrawAllShapes() {
+  $circle = new BigCircle(10, new Point(20,20));
+  $square = new BigSquare(/*side*/ 50, /*topLeft*/ new Point(10,10));
+  $drawingTool = new DrawingTool;
+  $shapeList = array();
+  shapeList[] = circle;
+  shapeList[] = square;
+  drawingTool.DrawAllShapes(shapeList);
+}
