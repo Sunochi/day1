@@ -28,8 +28,8 @@ class Square extends Shape
   }
 };
 
---drawingTool.php-------------------------------
-class drawingTool{
+--DrawingTool.php-------------------------------
+class DrawingTool{
   public function drawAllShapes($list)
   {
     int i;
