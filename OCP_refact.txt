@@ -68,7 +68,7 @@ public void testDrawAllShapes() {
   $square = new BigSquare(/*side*/ 50, /*topLeft*/ new Point(10,10));
   $drawingTool = new DrawingTool;
   $shapeList = array();
-  shapeList[] = circle;
-  shapeList[] = square;
-  drawingTool.DrawAllShapes(shapeList);
+  $shapeList[] = circle;
+  $shapeList[] = square;
+  $drawingTool.DrawAllShapes(shapeList);
 }
