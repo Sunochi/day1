@@ -59,6 +59,7 @@ public function BigSquare($side, $point){
 }
 
 public function Point($x, $y){
+  return array($x,$y);
   //これ必要？配列にして返すだけ
 }
 
