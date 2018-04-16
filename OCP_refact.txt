@@ -1,4 +1,6 @@
---Shape.php----------------------------------------
+const CIRCLE = 0;
+const SQUARE = 1;
+
 Class Shape{
  public function draw(){
    //とりあえず空。継承先で要記述
@@ -6,7 +8,6 @@ Class Shape{
  };
 }
 
---Circle.php---------------------------------------
 class Circle extends Shape
 {
   public $itsRadius;
@@ -17,7 +18,6 @@ class Circle extends Shape
   }
 };
 
---Square.php---------------------------------------
 class Square extends Shape
 {
   public $itsSide;
@@ -28,18 +28,21 @@ class Square extends Shape
   }
 };
 
---DrawingTool.php-------------------------------
 class DrawingTool{
+  //TODO 描画順で関数を分けるべきでは？仕様を要確認
   public function drawAllShapes($list)
   {
-    int i;
-    for (i = 0; i < count(list); i++)
+    //@TODO 描画順の配列を作成し、その順番でforeachを回す。
+    foreach($list[CIRCLE] => $circle)
     {
-      $list[i]->draw();
+      $circle->draw();
+    }
+    foreach($list[SQUARE] => $square)
+    {
+      $square->draw();
     }
   }
 }
---------------------------------------------------
 
 public function BigCircle($radius, $point){
   $circle = new Circle;
@@ -67,7 +70,7 @@ public void testDrawAllShapes() {
   $square = new BigSquare(/*side*/ 50, /*topLeft*/ new Point(10,10));
   $drawingTool = new DrawingTool;
   $shapeList = array();
-  $shapeList[] = circle;
-  $shapeList[] = square;
+  $shapeList[CIRCLE][] = circle;
+  $shapeList[SQUARE][] = square;
   $drawingTool.DrawAllShapes(shapeList);
 }
