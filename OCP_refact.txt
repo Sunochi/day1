@@ -1,6 +1,5 @@
 --Shape.php----------------------------------------
 Class Shape{
- public $itsType = "";
  public function draw(){
    //とりあえず空。継承先で要記述
    return true;
