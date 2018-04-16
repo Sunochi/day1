@@ -4,11 +4,11 @@ Const　CIRCLE_ORDER = 1;
 Const　SQUARE_ORDER = 2;
 
 Class Shape{
- public function draw(){
+  public $drawOrder = -1;
+  public function draw(){
    //とりあえず空。継承先で要記述
    return true;
  };
- public $drawOrder = -1;
 }
 
 class Circle extends Shape
